@@ -43,13 +43,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //UI组件初始化与事件绑定
     private void bindViews() {
-        img_show = (LinearLayout)findViewById(R.id.img_show);
+        img_show = (LinearLayout)findViewById(R.id.img_show); // 首页
+        img_shopping = (LinearLayout) findViewById(R.id.img_shopping); // 购物车
+        img_mine = (LinearLayout) findViewById(R.id.img_mine); // 我的
 
-        img_shopping = (LinearLayout) findViewById(R.id.img_shopping);
-        img_mine = (LinearLayout) findViewById(R.id.img_mine);
-        //ly_content = (FrameLayout) findViewById(R.id.ly_content);
-
-        img_show.setOnClickListener(this);
+        img_show.setOnClickListener(this);  //添加监听事件
         img_shopping.setOnClickListener(this);
         img_mine.setOnClickListener(this);
     }

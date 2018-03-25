@@ -34,8 +34,6 @@ public class  MainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
-
-
         //设置图片加载集合
         imageArray=new ArrayList<>();
         imageArray.add("http://img.my.csdn.net/uploads/201508/05/1438760757_3588.jpg");
