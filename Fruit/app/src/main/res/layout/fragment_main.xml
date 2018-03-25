@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:orientation="vertical"
     android:scrollbars="none"
-    android:background="@color/bg_white"
-    tools:context=".MainActivity">
+    android:background="@color/bg_white">
+
     <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:fitsSystemWindows="true" android:orientation="vertical">
         <RelativeLayout
             android:id="@+id/search"
@@ -16,11 +16,16 @@
             android:background="@color/colorGreen" >
             <!--编辑框-->
             <LinearLayout
-                android:layout_width="350dp"
+                android:id="@+id/linearLayout3"
+                android:layout_width="290dp"
                 android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="21dp"
+                android:layout_marginStart="21dp"
                 android:background="#29a50b">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -29,18 +34,34 @@
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop"
                     android:src="@mipmap/ic_mall_search" />
+
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
                     android:background="@null"
-                    android:hint="买一送一"
-                    android:textCursorDrawable="@drawable/shape_shop_cursor"
+                    android:hint="找水果"
                     android:textColor="@color/colorWhite"
                     android:textColorHint="@color/colorWhite"
-                    android:textSize="13dp"/>
+                    android:textCursorDrawable="@drawable/shape_shop_cursor"
+                    android:textSize="13dp" />
             </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_to_research"
+                android:layout_width="60dp"
+                android:layout_height="35dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/linearLayout3"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="-3dp"
+                android:background="@drawable/shape_msg_btn_white"
+                android:padding="8dp"
+                android:text="搜索"
+                android:textColor="@color/bg_black"
+                android:textSize="13dp" />
         </RelativeLayout>
 
         <!--轮播图片-->

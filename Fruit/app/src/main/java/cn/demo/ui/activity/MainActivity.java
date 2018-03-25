@@ -1,29 +1,26 @@
 package cn.demo.ui.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.widget.LinearLayout;
 
+import butterknife.Bind;
+import butterknife.OnClick;
 import cn.demo.R;
+import cn.demo.base.BaseActivity;
 import cn.demo.ui.fragment.MainFragment;
 import cn.demo.ui.fragment.MineFragment;
 
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends BaseActivity{
 
-    //UI Object
-    //private TextView txt_topbar;
-    private LinearLayout img_show;
-    private LinearLayout img_shopping;
-    private LinearLayout img_mine;
-
-    // private FrameLayout ly_content;
-
-    //Fragment Object
+    @Bind(R.id.img_show)
+    LinearLayout img_show;
+    @Bind(R.id.img_shopping)
+    LinearLayout img_shopping;
+    @Bind(R.id.img_mine)
+    LinearLayout img_mine;
 
     private FragmentManager fManager;
     private MainFragment mMainFragment ;
@@ -32,25 +29,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_main);
+    protected int getResourceId() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    public void initView(){
+        super.initView();
         fManager = getFragmentManager();//获取分页面ID
-        bindViews();//事件绑定
         img_show.performClick();   //模拟一次点击，既进去后选择第一项
     }
 
-    //UI组件初始化与事件绑定
-    private void bindViews() {
-        img_show = (LinearLayout)findViewById(R.id.img_show); // 首页
-        img_shopping = (LinearLayout) findViewById(R.id.img_shopping); // 购物车
-        img_mine = (LinearLayout) findViewById(R.id.img_mine); // 我的
 
-        img_show.setOnClickListener(this);  //添加监听事件
-        img_shopping.setOnClickListener(this);
-        img_mine.setOnClickListener(this);
-    }
 
     //重置所有文本的选中状态
     private void setSelected(){
@@ -68,13 +58,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-
-    @Override
-    public void onClick(View v) {
+    @OnClick({R.id.img_show,R.id.img_shopping,R.id.img_mine})
+    public void onViewClicked(View view){
         FragmentTransaction fTransaction = fManager.beginTransaction();
         hideAllFragment(fTransaction);
 
-        switch (v.getId()){
+        switch (view.getId()){
             case R.id.img_show:
                 setSelected();
                 img_show.setSelected(true);
@@ -100,7 +89,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 setSelected();
                 img_mine.setSelected(true);
                 if(mMineFragment == null){
-//                    mMineFragment = new MyFragment("第一个Fragment");
                     mMineFragment = new MineFragment();
                     fTransaction.add(R.id.ly_content, mMineFragment);
 
@@ -108,8 +96,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     fTransaction.show(mMineFragment);
                 }
                 break;
-
         }
         fTransaction.commit();
     }
+
 }

@@ -20,9 +20,9 @@ import retrofit2.Response;
 
 
 public class ListViewActivity extends AppCompatActivity{
+
     private ListView mContentLv;
     private ContentAdapter mContentAdapter;
-
     private Engine mEngine;
 
     @Override
@@ -31,7 +31,6 @@ public class ListViewActivity extends AppCompatActivity{
         setContentView(R.layout.activity_listview);
         mContentLv = findViewById(R.id.lv_content);
         mEngine = App.getInstance().getEngine();
-
         initListView();
         loadContentData();
     }

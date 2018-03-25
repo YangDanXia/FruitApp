@@ -1,13 +1,9 @@
 package cn.demo.ui.fragment;
 
-import android.app.Fragment;
 import android.content.Context;
-import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.content.Intent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 
 import com.bumptech.glide.Glide;
 import com.youth.banner.Banner;
@@ -18,22 +14,33 @@ import com.youth.banner.loader.ImageLoader;
 import java.util.ArrayList;
 import java.util.List;
 
+
+import butterknife.OnClick;
 import cn.demo.R;
+import cn.demo.base.BaseFragment;
+import cn.demo.ui.activity.ListViewActivity;
+import cn.demo.ui.activity.LoginActivity;
 
 /**
  * Created by Administrator on 2018/3/24.
  */
 
-public class  MainFragment extends Fragment {
-    private RelativeLayout bu1;
-    //
+public class  MainFragment extends BaseFragment {
+
     private List<String> imageArray;
     private List<String> imageTitle;
     private Banner mBanner;
+    private Intent intent;
+
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_main, container, false);
+    protected int getResourceId() {
+        return R.layout.fragment_main;
+    }
+
+    @Override
+    public void initView(View rootView){
+        super.initView(rootView);
         //设置图片加载集合
         imageArray=new ArrayList<>();
         imageArray.add("http://img.my.csdn.net/uploads/201508/05/1438760757_3588.jpg");
@@ -52,7 +59,7 @@ public class  MainFragment extends Fragment {
         imageTitle.add("我是");
 
 
-        mBanner = (Banner)view.findViewById(R.id.banner);
+        mBanner = (Banner)rootView.findViewById(R.id.banner);
         //设置banner样式
         mBanner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE);
         //设置图片加载器
@@ -69,18 +76,28 @@ public class  MainFragment extends Fragment {
         mBanner.setIndicatorGravity(BannerConfig.CENTER);
         //banner设置方法全部调用完毕时最后调用
         mBanner.start();
-        return view;
+    }
+
+    @OnClick({R.id.btn_to_research})
+    public void onViewClicked(View view){
+        switch (view.getId()){
+            case R.id.btn_to_research:
+                intent = new Intent(getActivity(),ListViewActivity.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
+
+        }
     }
 
 
+
     private class GlideImageLoader extends ImageLoader {
-        //        @Override
         public void displayImage(Context context, Object path, ImageView imageView) {
-//            //Glide 加载图片简单用法
+//         Glide 加载图片简单用法
             Glide.with(context).load((String) path).into(imageView);
-//            Glide.with(context).load(path).into(imageView);
-//
-//
+
         }
     }
 
