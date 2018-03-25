@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BGABannerDemo</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="tab_menu_alert">提醒</string>
+    <string name="tab_menu_profile">信息</string>
+    <string name="tab_menu_pay">我的</string>
+    <string name="tab_menu_setting">设置</string>
+
+    <string name="cardOne_1">快来签到</string>
+    <string name="cardOne_2">有惊喜</string>
+    <string name="cardTwo_1">积分多多</string>
+    <string name="cardTwo_2">兑好礼</string>
+    <string name="hot_sell">果园热卖</string>
+    <string name="orangeIntroduce">浓甜无渣 瓣瓣多汁</string>
+    <string name="orangeIntroduce_name">台湾茂谷柑</string>
+    <string name="orangeIntroduce_price">¥49.9 / 1kg</string>
+    <string name="appleIntroduce">优质苹果 香甜爽口</string>
+    <string name="appleIntroduce_name">经典红富士</string>
+    <string name="appleIntroduce_price">¥20 / 1kg</string>
+
+</resources>
