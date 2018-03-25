@@ -3,13 +3,8 @@ package cn.demo.ui.activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
-
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
 
@@ -26,7 +21,6 @@ import retrofit2.Response;
 
 public class ListViewActivity extends AppCompatActivity{
     private ListView mContentLv;
-//    private BGABanner mBanner;
     private ContentAdapter mContentAdapter;
 
     private Engine mEngine;
@@ -34,10 +28,8 @@ public class ListViewActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listview_demo);
+        setContentView(R.layout.activity_listview);
         mContentLv = findViewById(R.id.lv_content);
-
-        setTitle("ListViewDemo");
         mEngine = App.getInstance().getEngine();
 
         initListView();
@@ -48,13 +40,6 @@ public class ListViewActivity extends AppCompatActivity{
      * 初始化ListView
      */
     private void initListView() {
-        // 初始化HeaderView
-//        View headerView = View.inflate(this, R.layout.layout_header, null);
-//        mBanner = headerView.findViewById(R.id.banner);
-
-
-        // 初始化ListView
-//        mContentLv.addHeaderView(headerView);
         mContentAdapter = new ContentAdapter(this);
         mContentLv.setAdapter(mContentAdapter);
     }

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f4f4f4"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        layout="@layout/layout_toolbar" />
+
+    <!-- 分割线 -->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="42px"
+        android:background="@color/colorLightGrey"/>
+
+    
+          <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/colorWhite"/>
+
+    <!-- 输入手机号码 -->
+
+<!--输入手机号码-->
+
+    <LinearLayout
+        android:id="@+id/parent_phone"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorWhite"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal"
+        android:paddingTop="10dp" >
+
+        <ImageView
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/icon_login_mobile" />
+
+        <EditText
+            android:id="@+id/login_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="12dp"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="输入手机号码"
+            android:inputType="number"
+            android:maxLength="11"
+            android:textColorHint="#cccccc"
+            android:textCursorDrawable="@drawable/shape_register_editext"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <!--分割线-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:background="@color/colorLightGrey"/>
+
+    <!--输入密码、-->
+    <RelativeLayout
+        android:id="@+id/parent_pass"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorWhite"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <ImageView
+            android:id="@+id/img_pass"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/icon_login_pwd"/>
+
+                
+        <EditText
+            android:id="@+id/login_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@id/img_pass"
+            android:background="@null"
+            android:hint="设置登录密码"
+            android:inputType="textPassword"
+            android:maxLength="11"
+            android:textColorHint="#cccccc"
+            android:textCursorDrawable="@drawable/shape_register_editext"
+            android:textSize="14dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_weight="0.00"
+        android:background="@color/colorWhite"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <TextView
+            android:id="@+id/code_nums"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="17dp"
+            android:background="@drawable/shape_code"
+            android:gravity="center"
+            android:text="60 s"
+            android:textColor="#cccccc"
+            android:textSize="14dp" />
+
+        <ImageView
+            android:id="@+id/img_code"
+            android:layout_width="16dp"
+            android:layout_height="14dp"
+            android:layout_alignBottom="@+id/code_nums"
+            android:layout_alignParentLeft="true"
+            android:layout_alignTop="@+id/code_nums"
+            android:layout_marginLeft="10dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/icon_verify_code" />
+
+        <EditText
+            android:id="@+id/code_getnums"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_alignBottom="@+id/img_code"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@+id/img_code"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="输入验证码"
+            android:textColorHint="#cccccc"
+            android:textSize="14dp">
+
+            <requestFocus />
+        </EditText>
+
+    </RelativeLayout>
+        
+        
+        
+    <!-- 下一步 -->
+
+    <TextView
+        android:id="@+id/code_btn"
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_register_btn_32"
+        android:gravity="center"
+        android:text="保存"
+        android:textColor="@color/colorWhite"
+        android:textSize="14dp" />
+
+
+</LinearLayout>

@@ -31,9 +31,10 @@
         <!-- 头像  用户信息 -->
 
         <RelativeLayout
+            android:id="@+id/user_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorWhite" >
+            android:background="@color/colorWhite">
 
             <ImageView
                 android:id="@+id/me_headerImg"
@@ -50,7 +51,7 @@
                 android:layout_marginLeft="43px"
                 android:layout_toRightOf="@id/me_headerImg"
                 android:gravity="left|center_vertical"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -62,13 +63,12 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" >
-                </LinearLayout>
+                    android:layout_height="wrap_content"></LinearLayout>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp" >
+                    android:layout_marginTop="12dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -110,6 +110,7 @@
             <!-- 签到 -->
 
             <LinearLayout
+                android:id="@+id/user_signIn"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -133,6 +134,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/user_integration"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -156,6 +158,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/user_money"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -179,6 +182,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/user_coupon"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -204,45 +208,23 @@
         </LinearLayout>
 
         <!-- 商城购物 -->
-
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="38dp"
+            android:layout_height="52dp"
             android:layout_marginTop="16dp"
             android:background="@color/colorWhite" >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
                 android:text="商城购物"
                 android:textColor="#464646"
                 android:textSize="18dp" />
+        </LinearLayout>
 
-            <ImageView
-                android:id="@+id/img_more"
-                android:layout_width="20dp"
-                android:layout_height="16dp"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="10dp"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
-                android:src="@mipmap/icon_point_newpaget" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="10dp"
-                android:layout_toLeftOf="@id/img_more"
-                android:text="更多"
-                android:textColor="#999999"
-                android:textSize="17dp" />
-        </RelativeLayout>
-
-        <!-- 购物车 购物订单 我的售后  收货地址 -->
+        <!-- 积分兑换 我的订单 我的售后  收货地址 -->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -251,9 +233,10 @@
             android:orientation="horizontal"
             android:weightSum="4" >
 
-            <!-- 购物车 -->
+            <!-- 积分兑换 -->
 
             <LinearLayout
+                android:id="@+id/user_redeem"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -261,11 +244,11 @@
                 android:orientation="vertical" >
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop"
-                    android:src="@mipmap/me_shop_cart_icon" />
+                    android:src="@mipmap/me_redeem" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -282,9 +265,10 @@
                 android:layout_gravity="center"
                 android:background="#f4f4f4" />
 
-            <!-- 购物订单 -->
+            <!-- 我的订单 -->
 
             <LinearLayout
+                android:id="@+id/user_orders"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -316,6 +300,7 @@
             <!-- 我的售后 -->
 
             <LinearLayout
+                android:id="@+id/user_afterSale"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -347,6 +332,7 @@
             <!-- 收货地址 -->
 
             <LinearLayout
+                android:id="@+id/user_address"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -400,6 +386,7 @@
             <!-- 账户明细 -->
 
             <LinearLayout
+                android:id="@+id/user_account"
                 android:layout_width="0px"
                 android:layout_height="95dp"
                 android:layout_weight="1"
@@ -435,6 +422,7 @@
                 android:background="#f4f4f4" />
 
             <LinearLayout
+                android:id="@+id/user_dreamTree"
                 android:layout_width="0px"
                 android:layout_height="95dp"
                 android:layout_weight="1"
@@ -442,11 +430,11 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop"
-                    android:src="@mipmap/me_my_account_icon" />
+                    android:src="@mipmap/me_dream_tree" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -470,6 +458,7 @@
                 android:background="#f4f4f4" />
 
             <LinearLayout
+                android:id="@+id/user_footprint"
                 android:layout_width="0px"
                 android:layout_height="95dp"
                 android:layout_weight="1"
@@ -477,11 +466,11 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop"
-                    android:src="@mipmap/me_my_account_icon" />
+                    android:src="@mipmap/me_histroy" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -506,6 +495,7 @@
             <!-- 意见反馈 -->
 
             <LinearLayout
+                android:id="@+id/user_suggestion"
                 android:layout_width="0px"
                 android:layout_height="95dp"
                 android:layout_weight="1"
@@ -529,7 +519,6 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- 设置 -->
 
     </LinearLayout>
 
