@@ -1,4 +1,0 @@
-#Fri Mar 23 01:42:58 GMT+08:00 2018
-base.0=D\:\\Git\\FruitApp\\FruitApp\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\6
-path.0=classes.dex
-renamed.0=classes.dex
