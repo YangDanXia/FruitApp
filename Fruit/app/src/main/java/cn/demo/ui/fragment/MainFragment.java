@@ -18,8 +18,7 @@ import java.util.List;
 import butterknife.OnClick;
 import cn.demo.R;
 import cn.demo.base.BaseFragment;
-import cn.demo.ui.activity.ListViewActivity;
-import cn.demo.ui.activity.LoginActivity;
+import cn.demo.ui.activity.GoodListActivity;
 
 /**
  * Created by Administrator on 2018/3/24.
@@ -43,7 +42,6 @@ public class  MainFragment extends BaseFragment {
         super.initView(rootView);
         //设置图片加载集合
         imageArray=new ArrayList<>();
-        imageArray.add("http://img.my.csdn.net/uploads/201508/05/1438760757_3588.jpg");
         imageArray.add("http://img.zcool.cn/community/015cb75718419a32f8758c9b132f6f.jpg");
         imageArray.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521870501036&di=73c47f060ff0987ad15b7a9b40b9f914&imgtype=0&src=http%3A%2F%2Fwww.lsnypt.cn%2Ffile%2Fupload%2F201612%2F16%2F14-53-32-23-1.jpg.thumb.jpg");
         imageArray.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521870435614&di=1723825f7a1cdf0419cef4a547b310a1&imgtype=0&src=http%3A%2F%2Fimg.yzcdn.cn%2Fupload_files%2F2015%2F08%2F15%2FFkh5gcUpCQkxYjCCWYRBNQvzLUJd.jpg%2521730x0.jpg");
@@ -52,11 +50,10 @@ public class  MainFragment extends BaseFragment {
 
         //设置图片标题集合
         imageTitle=new ArrayList<>();
-        imageTitle.add("你好");
-        imageTitle.add("我是");
-        imageTitle.add("水果");
-        imageTitle.add("你好");
-        imageTitle.add("我是");
+        imageTitle.add("石榴");
+        imageTitle.add("苹果");
+        imageTitle.add("葡萄");
+        imageTitle.add("芒果");
 
 
         mBanner = (Banner)rootView.findViewById(R.id.banner);
@@ -82,7 +79,7 @@ public class  MainFragment extends BaseFragment {
     public void onViewClicked(View view){
         switch (view.getId()){
             case R.id.btn_to_research:
-                intent = new Intent(getActivity(),ListViewActivity.class);
+                intent = new Intent(getActivity(),GoodListActivity.class);
                 startActivity(intent);
                 break;
             default:

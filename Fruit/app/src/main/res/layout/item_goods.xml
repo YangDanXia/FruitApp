@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+style="@style/MatchWrap.Vertical"
+android:background="@color/bg_gray"
+android:padding="8dp">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:background="#fff">
+
+    <ImageView
+        android:id="@+id/goods_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="11dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/goods_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_item_normal_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="37dp"
+                android:layout_marginTop="5dp"
+                android:text="商品介绍"
+                android:textColor="#999999"
+                android:textSize="15dp" />
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="13dp"
+            android:layout_marginEnd="11dp"
+            android:layout_marginRight="11dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/add"
+            android:id="@+id/imageView" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="Y30.0"
+            android:textColor="#e16531"
+            android:textSize="15dp" />
+
+
+    </RelativeLayout>
+</LinearLayout>
+</LinearLayout>
