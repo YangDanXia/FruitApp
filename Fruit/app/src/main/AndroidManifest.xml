@@ -32,7 +32,6 @@
             android:name=".ui.activity.MissActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".ui.activity.GoodListActivity" />
-        <activity android:name=".ui.activity.Main3Activity"></activity>
     </application>
 
 </manifest>
